@@ -1,0 +1,6 @@
+services:
+  tingxie:
+    build: .
+    image: tingxie
+    ports:
+      - "8501:8501"
