@@ -26,3 +26,7 @@ These instructions will get you a copy of the project up and running on your loc
    docker-compose build
    docker-compose up -d
    ```
+
+3. Access the application
+
+   Open your web browser and navigate to `http://yourip:8501`.

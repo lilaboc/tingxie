@@ -18,6 +18,16 @@ st.title("Word Reader")
 # User input
 user_input = st.text_input("Enter words, separated by commas")
 
+# Check if 'user_input' is in session_state (i.e., this is not the first run)
+if 'user_input' in st.session_state:
+    # Check if the input has changed
+    if st.session_state.user_input != user_input:
+        # Update the session_state
+        st.session_state.words = user_input.split(",")
+
+# Store the current input in session_state for comparison in the next run
+st.session_state.user_input = user_input
+
 # Initialize session state
 if "words" not in st.session_state:
     st.session_state.words = []
@@ -30,7 +40,7 @@ col1, col2, col3 = st.columns(3)
 # Next button
 if col1.button("Next"):
     # Split the user input into a list of words
-    st.session_state.words = user_input.split(",")
+    # st.session_state.words = user_input.split(",")
     # If the words list is empty, read "听写完了，干得好"
     if st.session_state.index >= len(st.session_state.words):
         asyncio.run(_main("听写完了，干得好"))
