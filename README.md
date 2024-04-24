@@ -17,12 +17,12 @@ These instructions will get you a copy of the project up and running on your loc
 1. Clone the repository
 
    ```sh
-   git clone https://github.com/your_username_/tingxie.git
+   git clone https://github.com/lilaboc/tingxie.git
    ```
 
 2. Build and run the Docker containers using Docker Compose
 
    ```sh
    docker-compose build
-   docker-compose up -d .
+   docker-compose up -d
    ```
